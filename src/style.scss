@@ -1,0 +1,77 @@
+.formContainer {
+    display: flex;
+    border-radius: 8px;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    background-image: url(https://c4.wallpaperflare.com/wallpaper/553/971/773/flatdesign-landscape-forest-2d-minimalism-hd-wallpaper-preview.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .formWrapper {
+        display: block;
+        background-color: rgb(232, 232, 232);
+        padding: 20px 40px;
+        opacity: .8;
+        border-radius: 12px;
+
+        .chatName {
+            width: 100%;
+            display: block;
+            text-align: center;
+            color: crimson;
+            font-size: 24px;
+            font-weight: 600;
+            margin: 20px 0;
+        }
+        .titleName {
+            width: 100%;
+            text-align: center;
+            display: block;
+            margin-bottom: 8px;
+            font-size: 18px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            input {
+                width: 100%;
+                padding: 6px;
+                border-radius: 4px;
+                outline: none;
+            }
+            button {
+                width: 100%;
+                padding: 6px;
+                border-radius: 4px;
+                outline: none;
+                background: #008b66;
+                color: white;
+                transition: .2s;
+            }
+            button:hover {
+                background: #00ab7d;
+            }
+            .fileChoose {
+                padding: 0;
+                border-radius: 0;
+            }
+        }
+        p {
+            display: block;
+            width: 100%;
+            text-align: center;
+            margin-top: 8px;
+            a {
+                color: blue;
+                text-decoration: underline;
+                padding: 0 4px;
+            }
+        }
+    }
+}
+.formContainer.login {
+    background-image: url(https://data.designervn.net/2019/09/9676_3c1b0f70d986fd4e324cb43331b33b81.png);
+}
