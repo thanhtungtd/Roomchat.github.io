@@ -16,7 +16,7 @@ export default function Register() {
                         <img src={Add} alt="addImage" className='h-[30px] flex pr-4' />
                         Choose avatar
                     </label>
-                    <button>Sign up</button>
+                    <button className='mt-3'>Sign up</button>
                 </form>
                 <p>You have account? <a href="">Sign in</a></p>
             </div>
