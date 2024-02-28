@@ -20,6 +20,11 @@
         @content
     }
 };
+@mixin ipad {
+    @media screen and (max-width: 1024px) {
+        @content
+    }
+}
 @mixin laptop {
     @media screen and (max-width: 1200px) {
         @content
@@ -118,9 +123,12 @@
     .container {
         display: flex;
         border-radius: 8px;
-        width: 83%;
+        width: 70%;
         height: 80%;
         overflow: hidden;
+        @include ipad() {
+            min-width: 85%;
+        }
         @include tablet() {
             min-width: 90%;
         }
@@ -140,6 +148,9 @@
                 margin: 8px 8px 5px;
                 padding: 4px;
                 justify-content: space-between;
+                @include tablet() {
+                    flex-direction: row-reverse;
+                }
                 .title {
                     // width: 30%;
                     font-weight: 600;
@@ -161,6 +172,8 @@
                         height: 36px;
                         border-radius: 100rem;
                         margin-right: 2px;
+                        width: 36px;
+                        object-fit: cover;
                     }
                     .user_name {
                         font-weight: 600;
@@ -176,6 +189,12 @@
                         transition: .1s;
                         &:hover {
                             background: #ffbcbc;
+                        }
+                        @include ipad() {
+                            position: absolute;
+                            bottom: 4px;
+                            left: -8px;
+                            width: calc(100% - 8px);
                         }
                         @include tablet() {
                             position: absolute;
