@@ -188,7 +188,7 @@
             }
             .search,
             .chatroom {                
-                border-bottom: 1px solid gray;
+                border-bottom: 1px solid rgb(224, 224, 224);
 
                 .searchform {
                     // width: auto;
@@ -298,7 +298,7 @@
                         }
                     }
                     .messContent {
-                        background: #dadada;
+                        background: #fff;
                         padding: 4px 12px;
                         border-radius: 0 12px 12px 12px;
                         display: flex;
