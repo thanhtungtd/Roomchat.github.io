@@ -11,7 +11,7 @@ const Input = () => {
                     <img src={addImg} alt="" className='w-full' />
                 </label>
 
-                <button>Send</button>
+                <button><i className="fa-solid fa-paper-plane"></i></button>
             </div>
 
         </div>

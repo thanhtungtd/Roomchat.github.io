@@ -62,13 +62,18 @@ const Search = () => {
                 });
             }
         } catch (err) {
-        }
-        //create user chat
+        };
+
+        setUer(null);
+        setUserName("");
     }
     return (
         <div className='search' >
             <div className='searchform items-center'>
-                <input type="text" className='seek' placeholder='Find a user🔍' onKeyDown={handleKey} onChange={(e) => setUserName(e.target.value)} />
+                <input type="text" className='seek text-gray-600'
+                    placeholder='Find a user 🔍'
+                    onKeyDown={handleKey} onChange={(e) => setUserName(e.target.value)}
+                    value={userName} />
             </div>
             {err && <div className='userChat items-center'>
                 <img src="https://vn-test-11.slatic.net/p/26bf5e4c5785e116af9ef52c931a2bd6.png" alt="" />
