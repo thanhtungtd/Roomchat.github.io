@@ -123,8 +123,8 @@
     .container {
         display: flex;
         border-radius: 8px;
-        width: 70%;
-        height: 80%;
+        width: 65%;
+        height: 85%;
         overflow: hidden;
         @include ipad() {
             min-width: 85%;
