@@ -34,11 +34,11 @@ const Chatroom = () => {
                 <div className='userChat'
                     key={chat[0]}
                     onClick={() => handleSelect(chat[1].userInfo)}>
-                    <img src={chat[1].user.photoURL} alt="" />
+                    <img src={chat[1].userInfo.photoURL} alt="" />
                     <div className='userInfo'>
-                        <span>{chat[1].user.displayName}</span>
+                        <span>{chat[1].userInfo.displayName}</span>
                         <p className='preview'>
-                            {chat[1].user.lastMessage?.text}
+                            {chat[1].lastMessage?.text}
                         </p>
                     </div>
                 </div>
