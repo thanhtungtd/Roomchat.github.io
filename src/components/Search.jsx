@@ -32,7 +32,7 @@ const Search = () => {
     const handleSelectUser = async () => {
         //Check if the conversation already exists
         const combinedId = currentUser.uid > user.uid
-            ? currentUser.uid + user.iud
+            ? currentUser.uid + user.uid
             : user.uid + currentUser.uid;
 
         try {
@@ -62,7 +62,8 @@ const Search = () => {
                 });
             }
         } catch (err) {
-        };
+            //
+        }
 
         setUer(null);
         setUserName("");
@@ -70,7 +71,7 @@ const Search = () => {
     return (
         <div className='search' >
             <div className='searchform items-center'>
-                <input type="text" className='seek text-gray-600'
+                <input type="text" className='seek text-gray-600 font-[500]'
                     placeholder='Find a user 🔍'
                     onKeyDown={handleKey} onChange={(e) => setUserName(e.target.value)}
                     value={userName} />
@@ -81,7 +82,7 @@ const Search = () => {
                     <span>User not found!</span>
                 </div>
             </div>}
-            {user && <div className='userChat items-center' onClick={handleSelectUser}>
+            {user && <div className='userChat items-center bg-slate-100' onClick={handleSelectUser}>
                 <img src={user.photoURL} alt="" />
                 <div className='userInfo'>
                     <span>{user.displayName}</span>
