@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import addImg from '../img/addImage.png';
 import { ChatContext } from '../context/ChatContext';
 import { AuthContext } from '../context/AuthContext';
-import { Timestamp, arrayUnion, doc, updateDoc } from 'firebase/firestore';
+import { Timestamp, arrayUnion, doc, serverTimestamp, updateDoc } from 'firebase/firestore';
 import { db, storage } from '../firebase';
 import { v4 as uuid } from "uuid";
 import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage';
@@ -47,12 +47,14 @@ const Input = () => {
                 })
             })
         }
+
     };
 
     return (
         <div className='inputChat'>
             <input type="text" className='input' placeholder='type a message ...'
-                onChange={(e) => setText(e.target.value)} />
+                onChange={(e) => setText(e.target.value)}
+                value={text} />
             <div className='send'>
                 <input type="file" id='file' className='hidden'
                     onChange={(e) => setImg(e.target.files[0])} />

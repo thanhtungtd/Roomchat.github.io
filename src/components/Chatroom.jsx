@@ -31,11 +31,15 @@ const Chatroom = () => {
     return (
         <div className='chatroom'>
             {Object.entries(chats)?.map((chat) => (
-                <div className='userChat' key={chat[0]} onClick={() => handleSelect(chat[1].userInfo)}>
-                    <img src={chat[1].userInfo.photoURL} alt="" />
+                <div className='userChat'
+                    key={chat[0]}
+                    onClick={() => handleSelect(chat[1].userInfo)}>
+                    <img src={chat[1].user.photoURL} alt="" />
                     <div className='userInfo'>
-                        <span>{chat[1].userInfo.displayName}</span>
-                        <p className='preview'>{chat[1].userInfo.lastMessage?.text}</p>
+                        <span>{chat[1].user.displayName}</span>
+                        <p className='preview'>
+                            {chat[1].user.lastMessage?.text}
+                        </p>
                     </div>
                 </div>
             ))}

@@ -4,8 +4,8 @@ import { ChatContext } from '../context/ChatContext';
 
 const Message = ({ message }) => {
 
-    const {currenUser} = useContext(AuthContext);
-    const {data} = useContext(ChatContext);
+    const { currenUser } = useContext(AuthContext);
+    const { data } = useContext(ChatContext);
 
     console.log(message)
 
