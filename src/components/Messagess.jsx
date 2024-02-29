@@ -5,7 +5,7 @@ import { doc, onSnapshot } from 'firebase/firestore';
 import { db } from '../firebase';
 
 const Messagess = () => {
-    const [messages, setMessages] = useState([]);  
+    const [messages, setMessages] = useState([]);
     const { data } = useContext(ChatContext);
 
     useEffect(() => {
@@ -19,9 +19,9 @@ const Messagess = () => {
 
     return (
         <div className='messages'>
-            {messages.map(mes => {
-                <Message message={mes} key={mes.Id}></Message>
-            })}
+            {messages.map(m=> (
+                <Message message={m} key={m.Id}></Message>
+            ))}
         </div>
     );
 };

@@ -1,24 +1,33 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useRef } from 'react';
 import { AuthContext } from '../context/AuthContext';
 import { ChatContext } from '../context/ChatContext';
 
 const Message = ({ message }) => {
 
-    const { currenUser } = useContext(AuthContext);
+    const { currentUser } = useContext(AuthContext);
     const { data } = useContext(ChatContext);
 
-    console.log(message)
+    const ref = useRef()
+    useEffect(() => {
+        ref.current?.scrollIntoView({ behavior: "smooth" })
+    }, [message]);
 
     return (
-        <div className='message owner'>
-            {/* <div className='messInfo'>
-                <img src="" alt="" />
+        <div ref={ref}
+            className={`message ${message.senderId === currentUser.uid && "owner"}`}>
+            <div className='messInfo'>
+                <img src=
+                    {message.senderId === currentUser.uid
+                        ? currentUser.photoURL
+                        : data.user.photoURL
+                    }
+                    alt="" />
             </div>
             <div className='messContent'>
-                <p>Hello, I'm from DoraAI</p>
-                <img src="https://haycafe.vn/wp-content/uploads/2021/11/Anh-avatar-dep-chat-lam-hinh-dai-dien.jpg" alt="" />
-                <span className='time'>just now</span>
-            </div> */}
+                <p>{message.text}</p>
+                {message && <img src={message.img} alt="" />}
+                <span className='time'>now</span>
+            </div>
         </div>
     );
 };
