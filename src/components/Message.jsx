@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import { AuthContext } from '../context/AuthContext';
 import { ChatContext } from '../context/ChatContext';
 
@@ -11,6 +11,8 @@ const Message = ({ message }) => {
     useEffect(() => {
         ref.current?.scrollIntoView({ behavior: "smooth" })
     }, [message]);
+
+    const [date, setDate] = useState(new Date());
 
     return (
         <div ref={ref}
@@ -26,7 +28,7 @@ const Message = ({ message }) => {
             <div className='messContent'>
                 <p>{message.text}</p>
                 {message && <img src={message.img} alt="" />}
-                <span className='time'>now</span>
+                <span className='time'>{date.toLocaleString()}</span>
             </div>
         </div>
     );
